@@ -46,6 +46,20 @@ class WheelSpeedSensor(models.Model):
         return WheelSpeedSensor.__name__
 
 
+class WindSpeedSensor(models.Model):
+    """This model represents the Wind Speed sensors that we expect to
+    be potentially available in the future in the NYU Motorsports
+    Racing vehicle."""
+
+    created_at = models.DateTimeField()
+    # Wind Speed Panel
+    # measured in meters/second
+    wind_speed = models.FloatField(default=0)
+
+    def __str__(self):  # pragma: no cover
+        return WindSpeedSensor.__name__
+
+
 class SuspensionSensor(models.Model):
     """This model represents the Suspension sensors that we expect to
     be potentially available in the future in the NYU Motorsports
