@@ -6,16 +6,24 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('mercury', '0006_delete_simulateddata'),
+        ("mercury", "0006_delete_simulateddata"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='WindSpeedSensor',
+            name="WindSpeedSensor",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField()),
-                ('wind_speed', models.FloatField(default=0)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created_at", models.DateTimeField()),
+                ("wind_speed", models.FloatField(default=0)),
             ],
         ),
     ]

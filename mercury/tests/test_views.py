@@ -305,7 +305,6 @@ class TestSimulatorPost(TestCase):
         self.assertEqual(EXPECTED_CREATED_AT, foo.created_at)
         self.assertEqual(wind_speed_value, foo.wind_speed)
 
-
     def test_SimulatorView_POST_suspension(self):
         bl = 1009
         br = 1010

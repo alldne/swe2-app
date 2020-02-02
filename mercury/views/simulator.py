@@ -73,10 +73,7 @@ class SimulatorView(TemplateView):
             created_at = request.POST.get("created_at_wind_speed")
             wind_speed = request.POST.get("wind_speed")
 
-            data = WindSpeedSensor(
-                created_at=created_at,
-                wind_speed=wind_speed,
-            )
+            data = WindSpeedSensor(created_at=created_at, wind_speed=wind_speed,)
             data.save()
 
         if request.POST.get("created_at_ss"):
