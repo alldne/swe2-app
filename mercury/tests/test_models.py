@@ -4,6 +4,7 @@ from mercury.models import (
     TemperatureSensor,
     AccelerationSensor,
     WheelSpeedSensor,
+    WindSpeedSensor,
     SuspensionSensor,
     FuelLevelSensor,
     EventCodeAccess,
@@ -16,6 +17,7 @@ TEST_WHEEL_SPEED_FR = 30
 TEST_SUSPENSION_FR = 2
 TEST_FUEL = 6
 TEST_EVENT_CODE = "abcdefgh"
+TEST_WIND_SPEED = 5
 
 
 def create_simulated_data_objects():
@@ -27,6 +29,9 @@ def create_simulated_data_objects():
     )
     WheelSpeedSensor.objects.create(
         wheel_speed_fr=TEST_WHEEL_SPEED_FR, created_at=datetime.datetime.now()
+    )
+    WindSpeedSensor.objects.create(
+        wind_speed=TEST_WIND_SPEED, created_at=datetime.datetime.now()
     )
     SuspensionSensor.objects.create(
         suspension_fr=TEST_SUSPENSION_FR, created_at=datetime.datetime.now()
@@ -52,6 +57,10 @@ class TestSensorModels(TestCase):
     def test_wheel_speed(self):
         foo = WheelSpeedSensor.objects.get(wheel_speed_fr=TEST_WHEEL_SPEED_FR)
         self.assertEqual(foo.wheel_speed_fr, TEST_WHEEL_SPEED_FR)
+
+    def test_wind_speed(self):
+        foo = WindSpeedSensor.objects.get(wind_speed=TEST_WIND_SPEED)
+        self.assertEqual(foo.wind_speed, TEST_WIND_SPEED)
 
     def test_suspension(self):
         foo = SuspensionSensor.objects.get(suspension_fr=TEST_SUSPENSION_FR)
